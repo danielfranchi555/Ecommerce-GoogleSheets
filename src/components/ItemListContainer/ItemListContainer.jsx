@@ -97,7 +97,7 @@ export const ItemListContainer = () => {
              )):
            info.map((item)=>(
         <Stack  boxShadow='xl' p='0' rounded='md'   w='180px'   h='100%' >
-        <Stack  p={2} w='auto'border='solid 1px white' borderRadius='10px'  flex={1}  justifyContent='center' align='center'   alignItems='center' >
+        <Stack  p={2} w={{base:'180px',md:'auto'}}  border='solid 1px white' borderRadius='10px'  flex={1}  justifyContent='center' align='center'   alignItems='center' >
           <Image
             src={item.image}
             alt='Green double couch with wooden legs'

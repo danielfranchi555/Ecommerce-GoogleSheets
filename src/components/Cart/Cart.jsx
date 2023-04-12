@@ -55,24 +55,24 @@ export const Cart = () => {
      
      <Text textAlign='center' color='red'>No hay productos en el carrito</Text>
      : 
-     <TableContainer maxW='auto'>
-  <Table variant='simple'>
+     <TableContainer maxW='container.md'>
+  <Table size='md'>
     <Thead>
       <Tr>
         <Th>Eliminar</Th>
         <Th>Producto</Th>
         <Th>Titulo</Th>
-        <Th >Cantidad</Th>
+        <Th>Cantidad</Th>
         <Th >Subtotal</Th>
       </Tr>
     </Thead>
     <Tbody>
       {cart.map((item)=>(
           <Tr key={item.id}>
-        <Td><Button colorScheme='red' onClick={()=>deleteProduct(item.id)} variant='outline'> x</Button> </Td>
+        <Td><Button colorScheme='red' size='sm' onClick={()=>deleteProduct(item.id)} variant='outline'> x</Button> </Td>
 
-        <Td><Image boxSize='70px' src={item.image}/> </Td>
-        <Td>{item.title}</Td>
+        <Td align='center'><Image boxSize='70px' src={item.image}/> </Td>
+        <Td fontSize={13}>{item.title}</Td>
         <Td>{item.quantity}</Td>
         <Td> ${subtTotal(parseInt(item.price), item.quantity)} </Td>
       </Tr>

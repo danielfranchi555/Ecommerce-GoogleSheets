@@ -51,6 +51,7 @@ const toast = useToast()
  }
 
  
+
  const Total = ()=>{
   const total = cart.reduce((acc,prod)=> acc = acc + prod.quantity * parseInt(prod.price),0)
    return total
@@ -66,7 +67,7 @@ const toast = useToast()
         deleteProduct,
         quantityTotal,
         totalPrice,
-        Total
+        Total,
     }}>
 
         {children}

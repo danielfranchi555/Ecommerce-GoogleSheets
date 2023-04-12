@@ -1,8 +1,6 @@
-import {  Button, Container, Drawer,VisuallyHidden, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Image, Input, Stack, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr, useDisclosure } from '@chakra-ui/react'
+import {  Button, Container, Drawer,VisuallyHidden, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Image, Input, Stack, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr, useDisclosure, Link, HStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import carrito from '../../img/carrito.png'
-import cajero from '../../img/cajero.png'
-import { DragHandleIcon, AddIcon, WarningIcon, CheckIcon } from '@chakra-ui/icons'
 import { UseContextShop } from '../Context/Context'
 
 export const Cart = () => {
@@ -16,7 +14,10 @@ export const Cart = () => {
     return    price * quantity
     }
 
-
+   
+        
+    const text = cart.reduce((mess,prod)=> mess.concat(`* ${prod.title}`),'')
+     
 
 
   return (
@@ -26,10 +27,17 @@ export const Cart = () => {
    <Stack direction='row' align='center' justify='center'>
                 <Text flex={1} textAlign='center' fontSize={40} fontWeight='600'>Tienda<span style={{color:'green'}}>Online</span></Text>
                   <Stack align='center' spacing={0} direction='row'>
-                 <Button onClick={onOpen}>
-      <VisuallyHidden>Checkmark</VisuallyHidden>
-       <img src={carrito}  width='30px' alt="" />
-    </Button>
+                  <HStack>
+  <Button onClick={onOpen} colorScheme='teal' variant='outline' >
+    {quantityTotal()}
+  <Image
+    boxSize='30px'
+    objectFit='cover'
+    src={carrito}
+    alt='Dan Abramov'
+  />
+  </Button>
+</HStack>
             <Drawer
         isOpen={isOpen}
         placement='right'
@@ -60,7 +68,7 @@ export const Cart = () => {
     </Thead>
     <Tbody>
       {cart.map((item)=>(
-          <Tr>
+          <Tr key={item.id}>
         <Td><Button colorScheme='red' onClick={()=>deleteProduct(item.id)} variant='outline'> x</Button> </Td>
 
         <Td><Image boxSize='70px' src={item.image}/> </Td>
@@ -76,13 +84,16 @@ export const Cart = () => {
           
           </DrawerBody>
 
-          <DrawerFooter>
-            <Text px={2} fontSize={20}>Precio Total : $ <span style={{fontWeight:'700'}}> {Total()} </span>  </Text>
-            <Button variant='outline' mr={3} onClick={onClose}>
+          <Stack  direction='row' justifyContent='flex-end' >
+            <Text   px={2} fontSize={20}>Precio Total : $ <span style={{fontWeight:'700'}}> {Total()} </span>  </Text>
+            <Stack direction='row'>
+               <Button  variant='outline' mr={3} onClick={onClose}>
               Cancel
             </Button>
-            <Button colorScheme='blue'>Terminar Compra</Button>
-          </DrawerFooter>
+            <Button as={Link} href={`https://wa.me/543512002606?text=${encodeURIComponent(text)}`} colorScheme='blue'>Terminar Compra</Button>
+            </Stack>
+           
+          </Stack>
         </DrawerContent>
       </Drawer>
               </Stack>

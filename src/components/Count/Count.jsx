@@ -6,8 +6,8 @@ export const Count = ({item}) => {
    const [count,setCount] = useState(1)
    const stock = 5 
 
-   const{addToCart}= UseContextShop()
-
+   const{addToCart,cart}= UseContextShop()
+   
    const increment = ()=>{
     count < stock && setCount(count + 1)
     
@@ -18,12 +18,12 @@ export const Count = ({item}) => {
    }
 
   return (
-    <Stack  direction='row' justify='center' w='100%'  align='center'>
-         <Button  onClick={()=>addToCart({...item,quantity:count})} size='sm'  colorScheme='blue' >Comprar</Button>
-         <Stack direction='row'>
-           <Button size='sm' colorScheme='green'  onClick={()=>increment()}>+</Button>
+    <Stack  flex={1} direction='column' justify='center' w='100%' h='100%' align='center'>
+         <Button  onClick={()=>addToCart({...item,quantity:count})} size='md'variant='outline'  >Comprar</Button>
+         <Stack   direction='row'>
+           <Button size='xs' colorScheme='green'  onClick={()=>increment()}>+</Button>
            <Text>{count}</Text>
-        <Button size='sm' colorScheme='green' onClick={()=>decrement()} >-</Button>
+        <Button size='xs' colorScheme='green' onClick={()=>decrement()} >-</Button>
          </Stack>
        
     </Stack>

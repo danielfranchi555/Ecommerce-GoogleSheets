@@ -21,6 +21,7 @@ import {
   Link,
   HStack,
 } from "@chakra-ui/react";
+import React from 'react'
 import carrito from "../../img/carrito.png";
 import { UseContextShop } from "../Context/Context";
 

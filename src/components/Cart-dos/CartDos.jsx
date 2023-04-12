@@ -33,12 +33,12 @@ export const CartDos = () => {
     return price * quantity;
   };
 
-  const text = cart.reduce(
-    (mess, prod) =>
-      mess.concat(`Producto: ${prod.title} - cantidad: ${prod.quantity}\n`),
-    ""
-  );
+  const text = cart.reduce((mess, prod) => mess.concat(`Producto: ${prod.title} - cantidad: ${prod.quantity}\n`),"");
   const PagoTerminado = text.concat(`Precio Total :$${Total()}`);
+
+
+
+  
   return (
     <Stack
       onClick={onOpen}
@@ -132,9 +132,7 @@ export const CartDos = () => {
               </Button>
               <Button
                 as={Link}
-                href={`https://wa.me/543512002606?text=${encodeURIComponent(
-                  PagoTerminado
-                )}`}
+                href={`https://wa.me/543512002606?text=${encodeURIComponent(PagoTerminado)}`}
                 colorScheme="blue"
               >
                 Terminar Compra

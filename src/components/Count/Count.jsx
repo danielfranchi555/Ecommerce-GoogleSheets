@@ -38,18 +38,18 @@ export const Count = ({ item }) => {
           size="xs"
           colorScheme="green"
           variant="outline"
-          onClick={() => increment()}
+          onClick={() => decrement()}
         >
-          +
+          -
         </Button>
         <Text>{count}</Text>
         <Button
           size="xs"
           colorScheme="green"
           variant="outline"
-          onClick={() => decrement()}
+          onClick={() => increment()}
         >
-          -
+          +
         </Button>
       </Stack>
     </Stack>

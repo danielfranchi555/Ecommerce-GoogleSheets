@@ -134,7 +134,7 @@ export const Cart = () => {
                     </Button>
                     <Button
                       as={Link}
-                      href={`https://wa.me/543512002606?text=${encodeURIComponent(PagoTerminado)}`}
+                      href={`https://wa.me/54111111111?text=${encodeURIComponent(PagoTerminado)}`}
                       colorScheme="blue"
                     >
                       Terminar Compra

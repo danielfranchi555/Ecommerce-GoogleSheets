@@ -38,7 +38,7 @@ export const CartDos = () => {
 
 
 
-  
+
   return (
     <Stack
       onClick={onOpen}
@@ -132,7 +132,7 @@ export const CartDos = () => {
               </Button>
               <Button
                 as={Link}
-                href={`https://wa.me/543512002606?text=${encodeURIComponent(PagoTerminado)}`}
+                href={`https://wa.me/541111111111?text=${encodeURIComponent(PagoTerminado)}`}
                 colorScheme="blue"
               >
                 Terminar Compra

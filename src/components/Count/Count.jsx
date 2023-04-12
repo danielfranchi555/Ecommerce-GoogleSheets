@@ -19,11 +19,11 @@ export const Count = ({item}) => {
 
   return (
     <Stack  flex={1} direction='column' justify='center' w='100%' h='100%' align='center'>
-         <Button  onClick={()=>addToCart({...item,quantity:count})} size='md'variant='outline'  >Comprar</Button>
+         <Button  onClick={()=>addToCart({...item,quantity:count})} size='md'variant='outline' colorScheme='green' >Comprar</Button>
          <Stack   direction='row'>
-           <Button size='xs' colorScheme='green'  onClick={()=>increment()}>+</Button>
+           <Button size='xs' colorScheme='green' variant='outline'  onClick={()=>increment()}>+</Button>
            <Text>{count}</Text>
-        <Button size='xs' colorScheme='green' onClick={()=>decrement()} >-</Button>
+        <Button size='xs' colorScheme='green' variant='outline'  onClick={()=>decrement()} >-</Button>
          </Stack>
        
     </Stack>

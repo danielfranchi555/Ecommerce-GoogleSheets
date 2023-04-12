@@ -3,19 +3,11 @@ import "./ItemListContainer.scss";
 import Papa from "papaparse";
 import { Nav } from "../Nav/Nav";
 import {
-  Button,
-  Card,
-  CardBody,
-  Container,
-  Heading,
-  Image,
   SimpleGrid,
   Stack,
-  Text,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { Cart } from "../Cart/Cart";
-import { Count } from "../Count/Count";
 import { NavBar } from "../NavBar-2/NavBar";
 import { CartDos } from "../Cart-dos/CartDos";
 import { DotSpinner } from "@uiball/loaders";
